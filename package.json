@@ -1,0 +1,48 @@
+{
+  "name": "@anupheaus/ssl-server",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "repository": "https://github.com/Anupheaus/ssl-server.git",
+  "description": "SSL Server",
+  "author": "Anupheaus",
+  "license": "Apache-2.0",
+  "private": false,
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "files": [
+    "dist"
+  ],
+  "typings": "dist",
+  "dependencies": {
+    "@anupheaus/common": "link:../common",
+    "luxon": "^3.2.1",
+    "selfsigned-ca": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "@types/luxon": "^3.2.0",
+    "eslint": "^8.19.0",
+    "typescript": "^4.9.5",
+    "ts-node": "^10.9.1",
+    "ts-loader": "^9.4.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-node-externals": "^3.0.0",
+    "terser-webpack-plugin": "^5.3.6",
+    "nodemon-webpack-plugin": "^4.8.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "progress-webpack-plugin": "^1.0.16",
+    "webpack-inject-plugin": "^1.5.5",
+    "path-browserify": "^1.0.1",
+    "os-browserify": "^0.3.0",
+    "tsconfig-paths-webpack-plugin": "^4.0.0",
+    "process": "^0.11.10",
+    "dotenv": "^16.0.3",
+    "util": "^0.12.5",
+    "browser-resolve": "^2.0.0",
+    "buffer": "^6.0.3"
+  }
+}
