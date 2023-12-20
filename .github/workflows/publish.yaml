@@ -22,7 +22,7 @@ jobs:
       - name: Configure NPM
         run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
       - name: Install Dependencies
-        run: pnpm ci
+        run: pnpm i
       - name: Build
         run: pnpm run build --if-present
       - name: Perform Version Bump
