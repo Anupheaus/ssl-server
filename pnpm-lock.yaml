@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@anupheaus/common':
-    specifier: ^0.0.23
-    version: 0.0.23
+    specifier: ^0.0.24
+    version: 0.0.24
   luxon:
     specifier: ^3.2.1
     version: 3.4.3
@@ -92,8 +92,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@anupheaus/common@0.0.23:
-    resolution: {integrity: sha512-rChPXOU1ujCWLnirodEY9gYipxCwSXJnfjbIWB/1UH7vQdOiczAmZf2b3IiYcMoDcYWr6ye+U+PiMpkrRGvwEg==, tarball: https://npm.pkg.github.com/download/@anupheaus/common/0.0.23/342bd1df64852c31e9d4f2f4785ce576c13f4e33}
+  /@anupheaus/common@0.0.24:
+    resolution: {integrity: sha512-vbCLSt4vTbExQ4Wnf1GqbN3Yt80rMuFWiPY2tjFSwDoHz73DILeC5sSMkRc/+MLiuiAe97W08NvcBUh9QAtFKg==, tarball: https://npm.pkg.github.com/download/@anupheaus/common/0.0.24/14a98ec0c5756fa614a27d154612f347401198ae}
     dependencies:
       chalk: 5.3.0
       dotenv: 16.3.1
