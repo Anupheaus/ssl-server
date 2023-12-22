@@ -1,6 +1,6 @@
 {
   "name": "@anupheaus/ssl-server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/index.js",
   "repository": "https://github.com/Anupheaus/ssl-server.git",
   "description": "SSL Server",
