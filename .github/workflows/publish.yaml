@@ -20,7 +20,7 @@ jobs:
         with:
           version: 8.3.1
       - name: Configure NPM
-        run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
+        run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }} && npm config set @anupheaus:registry=https://npm.pkg.github.com/
       - name: Install Dependencies
         run: pnpm i
       - name: Build
