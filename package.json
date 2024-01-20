@@ -15,7 +15,7 @@
   ],
   "typings": "dist",
   "dependencies": {
-    "@anupheaus/common": "^0.0.24",
+    "@anupheaus/common": "^0.0.26",
     "luxon": "^3.2.1",
     "selfsigned-ca": "^2.0.1"
   },

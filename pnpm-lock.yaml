@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@anupheaus/common':
-    specifier: ^0.0.24
-    version: 0.0.24
+    specifier: ^0.0.26
+    version: 0.0.26
   luxon:
     specifier: ^3.2.1
     version: 3.4.3
@@ -92,8 +92,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@anupheaus/common@0.0.24:
-    resolution: {integrity: sha512-vbCLSt4vTbExQ4Wnf1GqbN3Yt80rMuFWiPY2tjFSwDoHz73DILeC5sSMkRc/+MLiuiAe97W08NvcBUh9QAtFKg==, tarball: https://npm.pkg.github.com/download/@anupheaus/common/0.0.24/14a98ec0c5756fa614a27d154612f347401198ae}
+  /@anupheaus/common@0.0.26:
+    resolution: {integrity: sha512-4bJHnZs7TWkmcWoG7ugMRjkgTAd+2E8yhBZvV45nZxKGT9U8h0WjySuc2ajPjaMIOV2TxLZM6bxUj1cRLTIrfQ==, tarball: download/@anupheaus/common/0.0.26/bd485cf8c4b2eb89dd1929841966f949124cff62}
     dependencies:
       chalk: 5.3.0
       dotenv: 16.3.1
@@ -606,10 +606,8 @@ packages:
     hasBin: true
     dev: true
 
-  /ajv-formats@2.1.1(ajv@8.12.0):
+  /ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependencies:
-      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -1971,7 +1969,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.13
       ajv: 8.12.0
-      ajv-formats: 2.1.1(ajv@8.12.0)
+      ajv-formats: 2.1.1
       ajv-keywords: 5.1.0(ajv@8.12.0)
     dev: true
 
