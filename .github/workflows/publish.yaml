@@ -10,17 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup Environment
-        uses: actions/setup-node@v1      
+        uses: actions/setup-node@v4
         with:
           node-version: 19.x
       - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8.3.1
-      - name: Configure NPM
-        run: npm config set //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }} && npm config set @anupheaus:registry=https://npm.pkg.github.com/
       - name: Install Dependencies
         run: pnpm i
       - name: Build
@@ -32,7 +30,7 @@ jobs:
       - name: Pack
         run: pnpm pack
       - name: Upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: package
           path: "*.tgz"
@@ -43,22 +41,19 @@ jobs:
     if: github.repository_owner == 'anupheaus'
     steps:
       - name: Download Package
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: package
       - name: Setup Environment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 19.x
-          registry-url: https://npm.pkg.github.com/
-          scope: "@anupheaus"
+          registry-url: https://registry.npmjs.org/
       - name: Setup PNPM
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           version: 8.3.1
-      - name: Configure NPM
-        run: echo "registry=https://npm.pkg.github.com/@anupheaus" >> .npmrc
       - name: Publish
         run: pnpm publish $(ls *.tgz)
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

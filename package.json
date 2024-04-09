@@ -6,6 +6,9 @@
   "description": "SSL Server",
   "author": "Anupheaus",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "private": false,
   "scripts": {
     "build": "webpack --mode production"
@@ -15,7 +18,7 @@
   ],
   "typings": "dist",
   "dependencies": {
-    "@anupheaus/common": "^0.0.26",
+    "@anupheaus/common": "^0.0.41",
     "luxon": "^3.2.1",
     "selfsigned-ca": "^2.0.1"
   },

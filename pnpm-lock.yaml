@@ -1,9 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@anupheaus/common':
-    specifier: ^0.0.26
-    version: 0.0.26
+    specifier: ^0.0.41
+    version: 0.0.41
   luxon:
     specifier: ^3.2.1
     version: 3.4.3
@@ -92,12 +96,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@anupheaus/common@0.0.26:
-    resolution: {integrity: sha512-4bJHnZs7TWkmcWoG7ugMRjkgTAd+2E8yhBZvV45nZxKGT9U8h0WjySuc2ajPjaMIOV2TxLZM6bxUj1cRLTIrfQ==, tarball: download/@anupheaus/common/0.0.26/bd485cf8c4b2eb89dd1929841966f949124cff62}
+  /@anupheaus/common@0.0.41:
+    resolution: {integrity: sha512-jfvN401wXHdSHTwY8a4CCAWozFrHWS4h1RSSgHtKvlQCabpCC28BLKHdxo/A12wYUucVZMbn+Aud8wHrGxAROA==}
     dependencies:
       chalk: 5.3.0
       dotenv: 16.3.1
       fast-equals: 4.0.3
+      inflection: 3.0.0
       luxon: 3.4.4
       numeral: 2.0.6
       object-hash: 3.0.0
@@ -606,8 +611,10 @@ packages:
     hasBin: true
     dev: true
 
-  /ajv-formats@2.1.1:
+  /ajv-formats@2.1.1(ajv@8.12.0):
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -1374,6 +1381,11 @@ packages:
     engines: {node: '>=0.8.19'}
     dev: true
 
+  /inflection@3.0.0:
+    resolution: {integrity: sha512-1zEJU1l19SgJlmwqsEyFTbScw/tkMHFenUo//Y0i+XEP83gDFdMvPizAD/WGcE+l1ku12PcTVHQhO6g5E0UCMw==}
+    engines: {node: '>=18.0.0'}
+    dev: false
+
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
@@ -1969,7 +1981,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.13
       ajv: 8.12.0
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
     dev: true
 
