@@ -83,6 +83,26 @@ export interface CreateSSLServerResult {
   getConnectionCount(): number;
 }
 
+function startSSLServer(logger: Logger, serverCert: Cert, callback?: RequestListener<typeof IncomingMessage, typeof ServerResponse>) {
+  return async () => {
+    logger.info('Starting SSL server...');
+    return createServer({
+      key: serverCert.key,
+      cert: serverCert.cert,
+      ca: serverCert.caCert,
+      rejectUnauthorized: false,
+      requestCert: false,
+    }, callback);
+  };
+}
+
+function startNormalServer(logger: Logger, callback?: RequestListener<typeof IncomingMessage, typeof ServerResponse>) {
+  return async () => {
+    logger.info('Starting normal server...');
+    return createServer(callback);
+  };
+}
+
 export async function createSSLServer({ host, port, certsPath, logger: providedLogger, callback }: Props): Promise<CreateSSLServerResult> {
   const logger = providedLogger ?? new Logger('SSL-Server');
   // fix up path
@@ -93,16 +113,10 @@ export async function createSSLServer({ host, port, certsPath, logger: providedL
   const rootCaCert = new Cert(`${certsPath}/root-ca`);
   const serverCert = new Cert(`${certsPath}/server`);
 
-  await serverCert.load()
-    .catch(createCertificate(serverCert, rootCaCert, logger, host));
-
-  const server = createServer({
-    key: serverCert.key,
-    cert: serverCert.cert,
-    ca: serverCert.caCert,
-    rejectUnauthorized: false,
-    requestCert: false,
-  }, callback);
+  const server = await serverCert.load()
+    .catch(createCertificate(serverCert, rootCaCert, logger, host))
+    .then(startSSLServer(logger, serverCert, callback))
+    .catch(startNormalServer(logger, callback)) as Server;
 
   const allConnections = new Set<Duplex>();
   server.on('connection', connection => {
